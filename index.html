@@ -14,16 +14,13 @@
 
 body {
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background: linear-gradient(135deg, #ff9a9e, #fad0c4);
     font-family: Arial, sans-serif;
-    overflow: hidden;
+    overflow-x: hidden;
+    padding: 20px;
 }
 
 /* Floating Hearts */
-
 #hearts-container {
     position: fixed;
     top: 0;
@@ -31,7 +28,6 @@ body {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    overflow: hidden;
     z-index: 0;
 }
 
@@ -48,106 +44,41 @@ body {
         transform: translateY(0) scale(1);
         opacity: 0;
     }
-
     10% {
         opacity: 0.8;
     }
-
     100% {
         transform: translateY(-110vh) scale(1.5);
         opacity: 0;
     }
 }
 
-/* Envelope */
-
-.envelope-container {
-    text-align: center;
+/* Letter Card */
+.letter-container {
     position: relative;
     z-index: 10;
-    padding: 20px;
+    max-width: 700px;
+    margin: 60px auto;
 }
 
-.envelope {
-    width: 320px;
-    height: 220px;
-    position: relative;
-    cursor: pointer;
-    margin: auto;
+.card {
+    background: rgba(255,255,255,0.95);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    text-align: center;
 }
 
-.envelope-body {
-    width: 100%;
-    height: 100%;
-    background: #ff6b81;
-    border-radius: 10px;
-    position: absolute;
-    z-index: 1;
-}
-
-.flap {
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-left: 160px solid transparent;
-    border-right: 160px solid transparent;
-    border-top: 120px solid #ff4d6d;
-    transform-origin: top;
-    transition: transform 1s ease;
-    z-index: 3;
-}
-
-.letter {
-    position: absolute;
-    width: 90%;
-    left: 5%;
-    height: 320px;
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    overflow-y: auto;
-    transition: transform 1s ease;
-    transform: translateY(40px);
-    z-index: 2;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-}
-
-.open .flap {
-    transform: rotateX(180deg);
-}
-
-.open .letter {
-    transform: translateY(-250px);
-}
-
-h2 {
+h1 {
     color: #e63946;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 p {
+    font-size: 18px;
     line-height: 1.7;
     color: #444;
-    margin-bottom: 12px;
-}
-
-.click-text {
-    margin-top: 25px;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
-@media (max-width: 400px) {
-    .envelope {
-        width: 280px;
-    }
-
-    .flap {
-        border-left: 140px solid transparent;
-        border-right: 140px solid transparent;
-    }
+    margin-bottom: 15px;
 }
 </style>
 </head>
@@ -156,87 +87,55 @@ p {
 
 <div id="hearts-container"></div>
 
-<div class="envelope-container">
-    <div class="envelope" onclick="openLetter()">
+<div class="letter-container">
+    <div class="card">
+        <h1>To My Beautiful, Sexy, and Amazing Girlfriend ❤️</h1>
 
-        <div class="flap"></div>
+        <p>Hi love,</p>
 
-        <div class="envelope-body"></div>
+        <p>
+            I made this little website just for you so you always have
+            something to come back to when you miss me.
+        </p>
 
-        <div class="letter">
+        <p>
+            Even though we’re far apart, you’re always on my mind.
+            I appreciate you more than words can explain.
+        </p>
 
-            <h2>To My Beautiful, sexy, amazing Girlfriend ❤️</h2>
-            <p>
-                Hi love,
-            </p>
+        <p>
+            Distance is hard, but what we have is stronger than that.
+            Nothing can change how much I care about you.
+        </p>
 
-            <p>
-                I made this little website because I wanted you to have
-                something you can open whenever you miss me.
-            </p>
+        <p>
+            I can’t wait for all the moments we’ll share together in
+            the future.
+        </p>
 
-            <p>
-                Even though we're far apart, you are always on my mind.
-                Every message, every call, every laugh we share means
-                more to me than I can explain.
-            </p>
-
-            <p>
-                Distance is only temporary, but what we have is real.
-                No matter how many miles separate us, I will always care
-                about you, support you, and love you.
-            </p>
-
-            <p>
-                Whenever you're having a bad day, come back here and
-                remember that there's someone thinking about you and
-                cheering for you every day.
-            </p>
-
-            <p>
-                I can't wait for all the memories we'll make together in
-                the future.
-            </p>
-
-            <p>
-                ❤️ Love,your amazing boyfriend/husband, Ty🤗❤️‍🔥🥹💕<br>
-            </p>
-
-        </div>
-
-    </div>
-
-    <div class="click-text">
-        Click the envelope 💌
+        <p>
+            ❤️ Love Always and forever,<br>
+            Your amazing husband Ty 💕❤️‍🔥🥹🙏🏽💗
+        </p>
     </div>
 </div>
 
 <script>
-function openLetter() {
-    document.querySelector('.envelope').classList.toggle('open');
-}
-
+// Floating hearts
 const heartsContainer = document.getElementById("hearts-container");
 
 function createHeart() {
     const heart = document.createElement("div");
-
     heart.classList.add("floating-heart");
 
     const hearts = ["❤️", "💕", "💖", "💗", "💘"];
-
-    heart.innerHTML =
-        hearts[Math.floor(Math.random() * hearts.length)];
+    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
 
     heart.style.left = Math.random() * 100 + "vw";
-
-    heart.style.fontSize =
-        (Math.random() * 15 + 15) + "px";
+    heart.style.fontSize = (Math.random() * 15 + 15) + "px";
 
     const duration = Math.random() * 4 + 6;
-
-    heart.style.animationDuration =
-        duration + "s";
+    heart.style.animationDuration = duration + "s";
 
     heartsContainer.appendChild(heart);
 
