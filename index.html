@@ -6,152 +6,146 @@
 <title>For My Love ❤️</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-body {
-    min-height: 100vh;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg, #ff9a9e, #fad0c4);
-    overflow-x: hidden;
-    padding: 20px;
+body{
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+min-height:100vh;
+padding:20px;
+overflow-x:hidden;
 }
 
-/* Floating Hearts */
-
-#hearts-container {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
+#hearts-container{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+z-index:0;
 }
 
-.floating-heart {
-    position: absolute;
-    bottom: -30px;
-    animation: floatUp linear forwards;
-    opacity: 0.8;
+.floating-heart{
+position:absolute;
+bottom:-30px;
+animation:floatUp linear forwards;
+opacity:.8;
 }
 
-@keyframes floatUp {
-    0% {
-        transform: translateY(0) scale(1);
-        opacity: 0;
-    }
-
-    10% {
-        opacity: 0.8;
-    }
-
-    100% {
-        transform: translateY(-110vh) scale(1.5);
-        opacity: 0;
-    }
+@keyframes floatUp{
+0%{
+transform:translateY(0) scale(1);
+opacity:0;
+}
+10%{
+opacity:.8;
+}
+100%{
+transform:translateY(-110vh) scale(1.5);
+opacity:0;
+}
 }
 
-/* Main Card */
-
-.container {
-    position: relative;
-    z-index: 10;
-    max-width: 850px;
-    margin: 40px auto;
+.container{
+position:relative;
+z-index:10;
+max-width:850px;
+margin:40px auto;
 }
 
-.card {
-    background: rgba(255,255,255,0.95);
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+.card{
+background:rgba(255,255,255,.95);
+border-radius:20px;
+padding:30px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 
-h1 {
-    text-align: center;
-    color: #e63946;
-    margin-bottom: 25px;
+h1{
+text-align:center;
+color:#e63946;
+margin-bottom:25px;
 }
 
-h2 {
-    text-align: center;
-    color: #e63946;
-    margin-top: 30px;
-    margin-bottom: 15px;
+h2{
+text-align:center;
+color:#e63946;
+margin-top:30px;
+margin-bottom:15px;
 }
 
-p {
-    color: #444;
-    line-height: 1.8;
-    font-size: 18px;
-    margin-bottom: 15px;
+p{
+font-size:18px;
+line-height:1.8;
+color:#444;
+margin-bottom:15px;
 }
 
-.signature {
-    text-align: center;
-    margin-top: 25px;
-    font-size: 20px;
-    font-weight: bold;
-    color: #e63946;
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:12px;
+margin-top:20px;
 }
 
-/* Gallery */
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    gap: 12px;
-    margin-top: 20px;
+.gallery img{
+width:100%;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+box-shadow:0 4px 10px rgba(0,0,0,.15);
 }
 
-.gallery img {
-    width: 100%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 12px;
-    cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+.gallery img:hover{
+transform:scale(1.03);
 }
 
-.gallery img:hover {
-    transform: scale(1.03);
+.signature{
+text-align:center;
+margin-top:25px;
+font-size:20px;
+font-weight:bold;
+color:#e63946;
 }
 
-/* Fullscreen Photo Viewer */
-
-#lightbox {
-    display: none;
-    position: fixed;
-    inset: 0;
-    background: rgba(0,0,0,0.92);
-    z-index: 9999;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+#lightbox{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.92);
+z-index:9999;
+justify-content:center;
+align-items:center;
+padding:20px;
 }
 
-#lightbox img {
-    max-width: 95%;
-    max-height: 95%;
-    border-radius: 12px;
+#lightbox img{
+max-width:95%;
+max-height:95%;
+border-radius:12px;
 }
 
-/* Mobile */
+@media(max-width:600px){
+.card{
+padding:20px;
+}
 
-@media (max-width: 600px) {
-    .card {
-        padding: 20px;
-    }
+p{
+font-size:16px;
+}
 
-    p {
-        font-size: 16px;
-    }
-
-    h1 {
-        font-size: 28px;
-    }
+h1{
+font-size:28px;
+}
 }
 </style>
 </head>
@@ -161,106 +155,108 @@ p {
 <div id="hearts-container"></div>
 
 <div class="container">
-    <div class="card">
+<div class="card">
 
-        <h1>To My Beautiful Girlfriend ❤️</h1>
+<h1>To My Beautiful Girlfriend ❤️</h1>
 
-        <p>Hi love,</p>
+<p>Hi love,</p>
 
-        <p>
-            I made this little website for you so that whenever you miss me,
-            you can come back here and remember how much you mean to me.
-        </p>
+<p>
+I made this little website for you so that whenever you miss me,
+you can come back here and remember how much you mean to me.
+</p>
 
-        <p>
-            Even though we're far apart, you're always on my mind.
-            Every day I think about you and every day I'm thankful
-            that you're in my life.
-        </p>
+<p>
+Even though we're far apart, you're always on my mind.
+Every day I think about you and every day I'm thankful
+that you're in my life.
+</p>
 
-        <p>
-            Distance isn't easy, but what we have is worth every second.
-            No matter how many miles separate us, nothing can change
-            how much I care about you.
-        </p>
+<p>
+Distance isn't easy, but what we have is worth every second.
+No matter how many miles separate us, nothing can change
+how much I care about you.
+</p>
 
-        <p>
-            Whenever you're having a tough day, remember that there's
-            someone out there cheering for you, believing in you,
-            and loving you.
-        </p>
+<p>
+Whenever you're having a tough day, remember that there's
+someone out there cheering for you, believing in you,
+and loving you.
+</p>
 
-        <p>
-            I can't wait until we get to make more memories together.
-            Until then, know that you'll always have a special place
-            in my heart. ❤️
-        </p>
+<p>
+I can't wait until we get to make more memories together.
+Until then, know that you'll always have a special place
+in my heart. ❤️
+</p>
 
-        <h2>Our Memories 📸</h2>
+<h2>Our Memories 📸</h2>
 
 <div class="gallery">
-    <img src="IMG_5899.jpeg" alt="Memory 1" onclick="openImage(this.src)">
-    <img src="IMG_6011.jpeg" alt="Memory 2" onclick="openImage(this.src)">
-    <img src="IMG_9806.jpeg" alt="Memory 3" onclick="openImage(this.src)">
-    <img src="IMG_5896.jpeg" alt="Memory 4" onclick="openImage(this.src)">
+<img src="IMG_5899.jpeg" alt="Memory 1" onclick="openImage(this.src)">
+<img src="IMG_6011.jpeg" alt="Memory 2" onclick="openImage(this.src)">
+<img src="IMG_9806.jpeg" alt="Memory 3" onclick="openImage(this.src)">
+<img src="IMG_5896.jpeg" alt="Memory 4" onclick="openImage(this.src)">
 </div>
 
-        <div class="signature">
-            ❤️ Love Always,<br>
-            Tynias
-        </div>
+<div class="signature">
+❤️ Love Always,<br>
+Tynias
+</div>
 
-    </div>
+</div>
 </div>
 
 <div id="lightbox" onclick="closeImage()">
-    <img id="lightbox-img" src="" alt="">
+<img id="lightbox-img" src="" alt="">
 </div>
 
 <script>
 
-/* Floating Hearts */
+const heartsContainer =
+document.getElementById("hearts-container");
 
-const heartsContainer = document.getElementById("hearts-container");
+function createHeart(){
 
-function createHeart() {
-    const heart = document.createElement("div");
+const heart =
+document.createElement("div");
 
-    heart.classList.add("floating-heart");
+heart.classList.add("floating-heart");
 
-    const hearts = ["❤️", "💕", "💖", "💗", "💘"];
+const hearts =
+["❤️","💕","💖","💗","💘"];
 
-    heart.innerHTML =
-        hearts[Math.floor(Math.random() * hearts.length)];
+heart.innerHTML =
+hearts[Math.floor(Math.random()*hearts.length)];
 
-    heart.style.left = Math.random() * 100 + "vw";
+heart.style.left =
+Math.random()*100+"vw";
 
-    heart.style.fontSize =
-        (Math.random() * 15 + 15) + "px";
+heart.style.fontSize =
+(Math.random()*15+15)+"px";
 
-    const duration = Math.random() * 4 + 6;
+const duration =
+Math.random()*4+6;
 
-    heart.style.animationDuration =
-        duration + "s";
+heart.style.animationDuration =
+duration+"s";
 
-    heartsContainer.appendChild(heart);
+heartsContainer.appendChild(heart);
 
-    setTimeout(() => {
-        heart.remove();
-    }, duration * 1000);
+setTimeout(()=>{
+heart.remove();
+},duration*1000);
 }
 
-setInterval(createHeart, 500);
+setInterval(createHeart,500);
 
-/* Fullscreen Gallery */
-
-function openImage(src) {
-    document.getElementById("lightbox-img").src = src;
-    document.getElementById("lightbox").style.display = "flex";
+function openImage(src){
+document.getElementById("lightbox-img").src = src;
+document.getElementById("lightbox").style.display = "flex";
 }
 
-function closeImage() {
-    document.getElementById("lightbox").style.display = "none";
+function closeImage(){
+document.getElementById("lightbox").style.display = "none";
 }
 
 </script>
